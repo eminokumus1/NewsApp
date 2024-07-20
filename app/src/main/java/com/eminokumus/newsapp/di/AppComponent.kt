@@ -1,8 +1,15 @@
 package com.eminokumus.newsapp.di
 
+import com.eminokumus.newsapp.details.DetailsFragment
+import com.eminokumus.newsapp.news.NewsFragment
 import dagger.Component
+import javax.inject.Singleton
 
-@Component
+@Singleton
+@Component(modules = [NetworkModule::class])
 interface AppComponent {
+
+    fun inject(fragment: NewsFragment)
+    fun inject(fragment: DetailsFragment)
 
 }
