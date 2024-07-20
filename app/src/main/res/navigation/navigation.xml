@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/newsFragment"
-        android:name="com.eminokumus.newsapp.fragments.NewsFragment"
+        android:name="com.eminokumus.newsapp.news.NewsFragment"
         android:label="fragment_news"
         tools:layout="@layout/fragment_news" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.eminokumus.newsapp.fragments.DetailsFragment"
+        android:name="com.eminokumus.newsapp.details.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" />
 </navigation>

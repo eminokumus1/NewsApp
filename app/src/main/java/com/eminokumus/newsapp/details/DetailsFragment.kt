@@ -1,19 +1,19 @@
-package com.eminokumus.newsapp.fragments
+package com.eminokumus.newsapp.details
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.eminokumus.newsapp.R
-import com.eminokumus.newsapp.databinding.FragmentNewsBinding
+import com.eminokumus.newsapp.databinding.FragmentDetailsBinding
 
 
-class NewsFragment : Fragment() {
-    private lateinit var binding: FragmentNewsBinding
+class DetailsFragment : Fragment() {
+    private lateinit var binding: FragmentDetailsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
     }
 
@@ -21,7 +21,7 @@ class NewsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentNewsBinding.inflate(layoutInflater, container, false)
+        binding = FragmentDetailsBinding.inflate(layoutInflater, container, false)
 
 
         return binding.root

@@ -73,4 +73,6 @@ dependencies {
     implementation ("com.google.dagger:dagger:2.51.1")
     annotationProcessor ("com.google.dagger:dagger-compiler:2.51.1")
     kapt("com.google.dagger:dagger-compiler:2.51.1")
+
+    implementation("androidx.paging:paging-runtime-ktx:3.3.0")
 }
