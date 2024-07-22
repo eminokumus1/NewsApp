@@ -5,17 +5,18 @@ import androidx.paging.PagingState
 import com.eminokumus.newsapp.Constants
 import com.eminokumus.newsapp.api.NewsApiInterface
 import com.eminokumus.newsapp.vo.Article
+import javax.inject.Inject
 
 
 private var page = Constants.FIRST_PAGE
 
-class NewsPagingSource(
+class NewsPagingSource @Inject constructor(
     private val apiService: NewsApiInterface
 ) : PagingSource<Int, Article>() {
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Article> {
         page = params.key ?: Constants.FIRST_PAGE
         val data =
-            apiService.getAllNews("in", "business", Constants.API_KEY, page, params.loadSize)
+            apiService.getAllNews("bbc-news", Constants.API_KEY, page, params.loadSize)
         return try {
             if (data.isSuccessful && data.body() != null){
                 LoadResult.Page(
