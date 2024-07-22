@@ -5,17 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.eminokumus.newsapp.databinding.FragmentDetailsBinding
 
 
 class DetailsFragment : Fragment() {
     private lateinit var binding: FragmentDetailsBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    private val args: DetailsFragmentArgs by navArgs()
 
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,8 +22,18 @@ class DetailsFragment : Fragment() {
     ): View? {
         binding = FragmentDetailsBinding.inflate(layoutInflater, container, false)
 
-
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.article = args.article
+
+        Glide.with(binding.root)
+            .load(args.article?.urlToImage)
+            .into(binding.detailsImage)
+
     }
 
 
