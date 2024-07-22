@@ -1,15 +1,17 @@
 package com.eminokumus.newsapp.vo
 
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Article(
     val author: String,
-    val content: Any,
-    val description: Any,
+    val content: String,
+    val description: String,
     val publishedAt: String,
     val source: Source,
     val title: String,
     val url: String,
-    val urlToImage: Any
-)
+    val urlToImage: String
+): Parcelable
